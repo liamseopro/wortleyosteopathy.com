@@ -45,18 +45,13 @@
       text-align: center;
     }
     .logo {
-      width: 88px;
-      height: 88px;
-      margin: 0 auto 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: var(--card);
-      border: 1px solid var(--line);
-      box-shadow: 0 8px 30px rgba(31,58,61,0.06);
+      max-width: 240px;
+      max-height: 160px;
+      width: auto;
+      height: auto;
+      margin: 0 auto 32px;
+      display: block;
     }
-    .logo svg { width: 52px; height: 52px; display: block; }
     .eyebrow {
       text-transform: uppercase;
       letter-spacing: 0.18em;
@@ -79,75 +74,17 @@
       max-width: 480px;
       margin: 0 auto 32px;
     }
-    .notify {
-      display: flex;
-      gap: 8px;
-      max-width: 420px;
-      margin: 0 auto 16px;
-    }
-    .notify input[type="email"] {
-      flex: 1;
-      min-width: 0;
-      padding: 14px 16px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      font-size: 15px;
-      background: var(--card);
-      color: var(--ink);
-      outline: none;
-      transition: border-color .15s, box-shadow .15s;
-    }
-    .notify input[type="email"]:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(184,137,58,0.15);
-    }
-    .notify button {
-      padding: 14px 22px;
-      border: none;
-      border-radius: 10px;
-      background: var(--ink);
-      color: #fff;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform .1s, background .2s;
-      white-space: nowrap;
-    }
-    .notify button:hover { background: #16302e; }
-    .notify button:active { transform: translateY(1px); }
-    .note { font-size: 13px; color: var(--ink-soft); }
-    .note a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
-    .confirm {
-      display: none;
-      padding: 12px 16px;
-      border-radius: 10px;
-      background: rgba(31,58,61,0.06);
-      color: var(--ink);
-      font-size: 14px;
-      margin-top: 8px;
-    }
-    .confirm.show { display: block; }
     .footer {
       margin-top: 40px;
       font-size: 13px;
       color: var(--ink-soft);
     }
     .footer strong { color: var(--ink); font-weight: 600; }
-    @media (max-width: 480px) {
-      .notify { flex-direction: column; }
-      .notify button { width: 100%; }
-    }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <div class="logo" aria-hidden="true">
-      <!-- Placeholder logo: replace /assets/logo.svg with the real logo file -->
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M32 6c-9 0-16 7-16 16 0 11 16 36 16 36s16-25 16-36c0-9-7-16-16-16z" stroke="#1f3a3d" stroke-width="2.5" stroke-linejoin="round"/>
-        <circle cx="32" cy="22" r="5.5" stroke="#b8893a" stroke-width="2.5"/>
-      </svg>
-    </div>
+    <img class="logo" src="/assets/logo.png" alt="Wortley Osteopathy logo" />
 
     <div class="eyebrow">Wortley Village &middot; London, Ontario</div>
     <h1>Wortley <span class="amp">&amp;</span> Osteopathy</h1>
@@ -157,13 +94,6 @@
       We&rsquo;re opening soon &mdash; be the first to know when bookings go live.
     </p>
 
-    <form class="notify" id="notify" onsubmit="return false;">
-      <input type="email" id="email" placeholder="you@example.com" aria-label="Email address" required />
-      <button type="submit" id="submit">Notify me</button>
-    </form>
-    <div class="confirm" id="confirm">Thanks &mdash; we&rsquo;ll be in touch when we launch.</div>
-    <p class="note">Questions in the meantime? Email <a href="mailto:hello@wortleyosteopathy.com">hello@wortleyosteopathy.com</a></p>
-
     <div class="footer">
       &copy; <span id="year"></span> <strong>Wortley Osteopathy</strong> &middot; wortleyosteopathy.com
     </div>
@@ -171,14 +101,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('notify').addEventListener('submit', function (e) {
-      e.preventDefault();
-      var email = document.getElementById('email').value.trim();
-      if (!email) return;
-      document.getElementById('confirm').classList.add('show');
-      document.getElementById('email').value = '';
-      // TODO: wire this to a real backend / form service when the site launches.
-    });
   </script>
 </body>
 </html>
