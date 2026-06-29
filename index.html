@@ -4,22 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wortley Osteopathy | Manual Osteopathic Care in London, ON</title>
-  <meta name="description" content="Wortley Osteopathy in Wortley Village, London, ON. Gentle, hands-on manual osteopathy for pain, mobility, and whole-body wellness. Book online with Mindy Menard, RMO." />
+  <meta name="description" content="Wortley Osteopathy in Wortley Village, London, ON. Gentle, hands-on manual osteopathy for pain, mobility, and whole-body wellness. Opening soon." />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Wortley Osteopathy | Manual Osteopathic Care in London, ON" />
-  <meta property="og:description" content="Gentle, hands-on manual osteopathy in Wortley Village, London, ON. Book online today." />
+  <meta property="og:description" content="Opening soon in Wortley Village, London, ON." />
   <meta property="og:url" content="https://wortleyosteopathy.com" />
-  <meta property="og:image" content="/assets/img/Hero.jpg" />
+  <meta property="og:image" content="https://wortleyosteopathy.com/assets/img/Hero.jpg" />
   <meta name="theme-color" content="#1f3a3d" />
   <meta name="google-site-verification" content="uV9_c1UGjgAr91lRKeZsSWe9PfS0M8XxCIdSMMfOols" />
   <link rel="canonical" href="https://wortleyosteopathy.com/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Wortley Osteopathy | Manual Osteopathic Care in London, ON" />
-  <meta name="twitter:description" content="Gentle, hands-on manual osteopathy in Wortley Village, London, ON. Book online today." />
+  <meta name="twitter:description" content="Opening soon in Wortley Village, London, ON." />
   <meta name="twitter:image" content="https://wortleyosteopathy.com/assets/img/Hero.jpg" />
   <meta property="og:image:alt" content="Wortley Osteopathy treatment room" />
   <meta property="og:locale" content="en_CA" />
@@ -32,7 +32,7 @@
     "@context": "https://schema.org",
     "@type": "HealthAndBeautyBusiness",
     "name": "Wortley Osteopathy",
-    "description": "Manual osteopathic care in Wortley Village, London, Ontario.",
+    "description": "Manual osteopathic care in Wortley Village, London, Ontario. Opening soon.",
     "image": "https://wortleyosteopathy.com/assets/img/Hero.jpg",
     "url": "https://wortleyosteopathy.com",
     "telephone": "+15196703329",
@@ -46,587 +46,77 @@
       "postalCode": "N6C 3R7",
       "addressCountry": "CA"
     },
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "18:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "09:00", "closes": "15:00" }
-    ],
     "sameAs": ["https://wortleyosteopathy.janeapp.com/"]
   }
   </script>
   <style>
     :root {
       --bg: #f6f4ef;
-      --bg-2: #efeae0;
       --ink: #1f3a3d;
       --ink-soft: #4a5f62;
       --ink-mute: #7a8a8c;
       --accent: #b8893a;
       --accent-soft: #d8b06a;
       --line: #e4e0d6;
-      --card: #ffffff;
-      --teal-1: #2c5155;
-      --teal-2: #1f3a3d;
-      --shadow-sm: 0 1px 2px rgba(31,58,61,0.06), 0 2px 8px rgba(31,58,61,0.04);
       --shadow-md: 0 6px 24px rgba(31,58,61,0.10);
-      --shadow-lg: 0 18px 60px rgba(31,58,61,0.16);
       --radius: 16px;
-      --radius-sm: 10px;
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    html, body { height: 100%; }
     body {
       font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color: var(--ink);
-      background: var(--bg);
+      background:
+        radial-gradient(900px 500px at 110% -10%, rgba(184,137,58,0.14), transparent 60%),
+        radial-gradient(700px 500px at -10% 110%, rgba(31,58,61,0.10), transparent 60%),
+        var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 32px 20px;
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
+      text-align: center;
     }
-    h1, h2, h3, h4 { font-family: "Fraunces", Georgia, serif; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; color: var(--teal-2); }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .wrap { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
-
-    /* ===== Reveal on scroll ===== */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
-    .reveal.in { opacity: 1; transform: none; }
-    .reveal.d1 { transition-delay: .08s; }
-    .reveal.d2 { transition-delay: .16s; }
-    .reveal.d3 { transition-delay: .24s; }
-    .reveal.d4 { transition-delay: .32s; }
-
-    /* ===== Top bar ===== */
-    .topbar {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: saturate(1.2) blur(10px);
-      background: rgba(246,244,239,0.82);
-      border-bottom: 1px solid rgba(228,224,214,0.7);
-      transition: box-shadow .3s var(--ease), background .3s var(--ease);
+    .wrap { width: 100%; max-width: 520px; }
+    .logo { max-width: 200px; width: auto; height: auto; margin: 0 auto 32px; display: block; }
+    .brand { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: clamp(28px, 6vw, 40px); letter-spacing: -0.02em; line-height: 1.15; color: var(--ink); margin-bottom: 10px; }
+    .tagline { color: var(--accent); font-size: 17px; font-weight: 500; margin-bottom: 24px; }
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 0 auto 24px;
+      max-width: 360px;
     }
-    .topbar.scrolled { box-shadow: var(--shadow-sm); background: rgba(246,244,239,0.94); }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 80px; }
-    .brand { display: flex; align-items: center; gap: 10px; }
-    .brand img { height: 56px; width: auto; }
-    .brand-name { font-family: "Fraunces", serif; font-weight: 600; font-size: 18px; color: var(--teal-2); letter-spacing: -0.01em; }
-    .nav-links { display: none; gap: 28px; align-items: center; }
-    .nav-links a { font-size: 15px; font-weight: 500; color: var(--ink-soft); transition: color .2s var(--ease); position: relative; }
-    .nav-links a::after { content:""; position:absolute; left:0; bottom:-6px; height:2px; width:0; background:var(--accent); transition: width .3s var(--ease); }
-    .nav-links a:hover { color: var(--teal-2); }
-    .nav-links a:hover::after { width: 100%; }
+    .card p { color: var(--ink-soft); font-size: 15px; margin-bottom: 10px; }
+    .card p strong { color: var(--ink); }
+    .card p:last-child { margin-bottom: 0; }
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 11px 22px; border-radius: 999px;
       font-weight: 600; font-size: 15px; cursor: pointer;
-      transition: transform .2s var(--ease), box-shadow .25s var(--ease), background .2s var(--ease);
-      white-space: nowrap; border: none;
+      transition: transform .2s var(--ease), box-shadow .25s var(--ease);
+      white-space: nowrap; border: none; text-decoration: none;
+      background: #1f3a3d; color: #fff; box-shadow: 0 6px 18px rgba(31,58,61,0.22);
     }
-    .btn-primary { background: var(--teal-2); color: #fff; box-shadow: 0 6px 18px rgba(31,58,61,0.22); }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(31,58,61,0.30); background: var(--teal-1); }
-    .btn-ghost { background: transparent; color: var(--teal-2); border: 1.5px solid rgba(31,58,61,0.18); }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-    .menu-btn { display: inline-flex; background: none; border: none; cursor: pointer; padding: 8px; color: var(--teal-2); z-index: 60; }
-    .menu-overlay { position: fixed; inset: 0; z-index: 48; background: rgba(31,58,61,0.28); opacity: 0; pointer-events: none; transition: opacity .35s var(--ease); }
-    .menu-overlay.open { opacity: 1; pointer-events: auto; }
-    .mobile-menu {
-      position: fixed; top: 80px; left: 0; right: 0; z-index: 52;
-      display: flex; flex-direction: column; gap: 4px; padding: 20px 24px 28px;
-      background: rgba(246,244,239,0.97); backdrop-filter: saturate(1.2) blur(12px);
-      border-bottom: 1px solid var(--line);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-14px); opacity: 0; pointer-events: none;
-      transition: transform .35s var(--ease), opacity .3s var(--ease);
-    }
-    .mobile-menu.open { transform: none; opacity: 1; pointer-events: auto; }
-    .mobile-menu a { padding: 14px 4px; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-weight: 500; font-size: 17px; }
-    .mobile-menu a:last-child { border-bottom: none; }
-
-    /* ===== Sticky mobile CTA ===== */
-    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 55; padding: 14px 20px calc(14px + env(safe-area-inset-bottom, 0px)); background: linear-gradient(0deg, rgba(246,244,239,0.98) 80%, rgba(246,244,239,0.75) 100%); border-top: 1px solid var(--line); transform: translateY(100%); transition: transform .4s var(--ease); display: none; justify-content: center; }
-    .sticky-cta.on { transform: none; }
-    .sticky-cta .btn { flex: 1; max-width: 480px; justify-content: center; }
-
-    /* ===== Hero ===== */
-    .hero { position: relative; padding: 64px 0 88px; overflow: hidden; }
-    .hero::before {
-      content: ""; position: absolute; inset: 0; z-index: -1;
-      background:
-        radial-gradient(900px 500px at 110% -10%, rgba(184,137,58,0.14), transparent 60%),
-        radial-gradient(700px 500px at -10% 110%, rgba(31,58,61,0.10), transparent 60%);
-    }
-    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: rgba(184,137,58,0.12); color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 22px; white-space: nowrap; }
-    .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-    .hero h1 { font-size: clamp(34px, 5.2vw, 58px); line-height: 1.05; margin-bottom: 20px; }
-    .hero h1 em { font-style: italic; color: var(--accent); font-weight: 500; }
-    .hero p.lead { font-size: clamp(16px, 2vw, 19px); color: var(--ink-soft); max-width: 520px; margin-bottom: 30px; }
-    .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-bottom: 28px; }
-    .trust { display: flex; flex-wrap: wrap; gap: 18px 26px; align-items: center; color: var(--ink-mute); font-size: 14px; }
-    .trust .item { display: flex; align-items: center; gap: 8px; }
-    .trust svg { width: 18px; height: 18px; color: var(--accent); }
-
-    .hero-visual { position: relative; }
-    .hero-visual .frame { position: relative; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 4/5; }
-    .hero-visual .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.6s var(--ease); }
-    .hero-visual .frame img.is-active { opacity: 1; }
-    .hero-visual .badge {
-      position: absolute; right: -14px; bottom: 36px;
-      background: var(--card); border-radius: 16px; padding: 14px 18px;
-      box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 12px;
-      animation: float 5s ease-in-out infinite;
-    }
-    .hero-visual .badge .ico { width: 38px; height: 38px; border-radius: 50%; background: rgba(184,137,58,0.14); color: var(--accent); display: grid; place-items: center; }
-    .hero-visual .badge .ico svg { width: 20px; height: 20px; }
-    .hero-visual .badge .t1 { font-size: 13px; color: var(--ink-mute); }
-    .hero-visual .badge .t2 { font-weight: 700; color: var(--teal-2); font-size: 15px; }
-    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-
-    /* ===== Section base ===== */
-    section.block { padding: 84px 0; position: relative; overflow: hidden; }
-    .section-head { text-align: center; max-width: 640px; margin: 0 auto 52px; position: relative; }
-    .section-head .eyebrow { margin-bottom: 16px; }
-    .section-head h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 14px; }
-    .section-head p { color: var(--ink-soft); font-size: 17px; }
-
-    /* shared faint dot pattern */
-    .dots { --dot: rgba(31,58,61,0.05); background-image: radial-gradient(var(--dot) 1px, transparent 1px); background-size: 22px 22px; }
-
-    /* ===== About ===== */
-    .about { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .about::before { content:""; position:absolute; right:-6%; top:-10%; width:320px; height:320px; border-radius:50%; background: radial-gradient(circle, rgba(184,137,58,0.10), transparent 70%); }
-    .about::after { content:""; position:absolute; left:-5%; bottom:-15%; width:260px; height:260px; border-radius:50%; background: radial-gradient(circle, rgba(31,58,61,0.06), transparent 70%); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-    .about-grid .media { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 4/5; box-shadow: var(--shadow-md); }
-    .about-grid .media img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-    .about-text h2 { font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 18px; }
-    .about-text p { color: var(--ink-soft); margin-bottom: 14px; }
-    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
-    .stat { padding: 18px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--bg); }
-    .stat .num { font-family: "Fraunces", serif; font-weight: 700; font-size: 26px; color: var(--accent); }
-    .stat .lbl { font-size: 13px; color: var(--ink-mute); }
-
-    /* ===== Services ===== */
-    .services { position: relative; }
-    .services::before { content:""; position:absolute; left:-4%; top:-6%; width:280px; height:280px; border-radius:50%; background: radial-gradient(circle, rgba(184,137,58,0.08), transparent 70%); }
-    .services::after { content:""; position:absolute; right:-3%; bottom:-8%; width:340px; height:340px; border-radius:50%; background: radial-gradient(circle, rgba(31,58,61,0.05), transparent 70%); }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; position: relative; }
-    .service {
-      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
-      padding: 28px; transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
-      position: relative; overflow: hidden;
-    }
-    .service::before { content:""; position:absolute; left:0; top:0; height:3px; width:0; background: linear-gradient(90deg, var(--accent), var(--accent-soft)); transition: width .4s var(--ease); }
-    .service:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: transparent; }
-    .service:hover::before { width: 100%; }
-    .service .ico { width: 52px; height: 52px; border-radius: 14px; background: rgba(31,58,61,0.07); color: var(--teal-2); display: grid; place-items: center; margin-bottom: 18px; transition: background .3s var(--ease), color .3s var(--ease); }
-    .service:hover .ico { background: rgba(184,137,58,0.14); color: var(--accent); }
-    .service .ico svg { width: 26px; height: 26px; }
-    .service h3 { font-size: 21px; margin-bottom: 8px; }
-    .service p { color: var(--ink-soft); font-size: 15px; }
-
-    /* ===== Approach / steps ===== */
-    .approach { background:
-      radial-gradient(8px 8px at 20% 30%, rgba(31,58,61,0.04) 50%, transparent 51%),
-      radial-gradient(8px 8px at 80% 70%, rgba(184,137,58,0.05) 50%, transparent 51%),
-      linear-gradient(180deg, var(--bg-2), var(--bg)); background-size: 60px 60px, 70px 70px, 100% 100%; }
-    .approach::before { content:""; position:absolute; left:50%; top:8%; width:360px; height:200px; transform: translateX(-50%); background: radial-gradient(ellipse, rgba(184,137,58,0.06), transparent 70%); }
-    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: step; position: relative; }
-    .step { background: var(--card); border-radius: var(--radius); padding: 26px; position: relative; border: 1px solid var(--line); }
-    .step .n { font-family: "Fraunces", serif; font-weight: 700; font-size: 34px; color: rgba(184,137,58,0.30); counter-increment: step; }
-    .step .n::before { content: counter(step, decimal-leading-zero); }
-    .step h3 { font-size: 18px; margin: 8px 0 8px; }
-    .step p { font-size: 14px; color: var(--ink-soft); }
-
-    /* ===== Testimonial ===== */
-    .quote { background: var(--teal-2); color: #f6f4ef; padding: 84px 0; position: relative; overflow: hidden; }
-    .quote::before { content:""; position:absolute; right:-100px; top:-100px; width:340px; height:340px; border-radius:50%; background: rgba(184,137,58,0.16); }
-    .quote::after { content:""; position:absolute; left:-80px; bottom:-80px; width:240px; height:240px; border-radius:50%; background: rgba(255,255,255,0.05); }
-    .quote .inner { position: relative; max-width: 760px; margin: 0 auto; text-align: center; }
-    .quote .mark { font-family: "Fraunces", serif; font-size: 80px; line-height: 0.4; color: var(--accent-soft); margin-bottom: 8px; }
-    .quote blockquote { font-family: "Fraunces", serif; font-size: clamp(22px, 3vw, 30px); font-weight: 500; line-height: 1.35; margin-bottom: 20px; }
-    .quote .who { color: rgba(246,244,239,0.75); font-size: 15px; }
-    .quote .who strong { color: #fff; display: block; font-weight: 600; }
-
-    /* ===== Contact ===== */
-    .contact::before { content:""; position:absolute; right:-4%; top:-10%; width:300px; height:300px; border-radius:50%; background: radial-gradient(circle, rgba(31,58,61,0.05), transparent 70%); }
-    .contact::after { content:""; position:absolute; left:-3%; bottom:-12%; width:240px; height:240px; border-radius:50%; background: radial-gradient(circle, rgba(184,137,58,0.07), transparent 70%); }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; position: relative; }
-    .info-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow-sm); }
-    .info-card h3 { font-size: 22px; margin-bottom: 20px; }
-    .info-row { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line); }
-    .info-row:last-child { border-bottom: none; }
-    .info-row .ico { flex: 0 0 40px; width: 40px; height: 40px; border-radius: 10px; background: rgba(184,137,58,0.12); color: var(--accent); display: grid; place-items: center; }
-    .info-row .ico svg { width: 20px; height: 20px; }
-    .info-row .lbl { font-size: 13px; color: var(--ink-mute); }
-    .info-row .val { font-weight: 600; color: var(--teal-2); }
-    .info-row a.val:hover { color: var(--accent); }
-    .map-wrap { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--line); height: 100%; min-height: 340px; }
-    .map-wrap iframe { width: 100%; height: 100%; min-height: 340px; border: 0; display: block; }
-
-    /* ===== Final CTA ===== */
-    .cta-final { padding: 80px 0; text-align: center; background: var(--bg-2); border-top: 1px solid var(--line); position: relative; overflow: hidden; }
-    .cta-final::before { content:""; position:absolute; left:-10%; bottom:-20%; width:280px; height:280px; border-radius:50%; background: radial-gradient(circle, rgba(184,137,58,0.08), transparent 70%); }
-    .cta-final::after { content:""; position:absolute; right:-8%; top:-10%; width:200px; height:200px; border-radius:50%; background: radial-gradient(circle, rgba(31,58,61,0.04), transparent 70%); }
-    .cta-final h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 14px; position: relative; }
-    .cta-final p { color: var(--ink-soft); max-width: 520px; margin: 0 auto 26px; }
-
-    /* ===== Footer ===== */
-    footer { background: var(--teal-2); color: rgba(246,244,239,0.78); padding: 48px 0 28px; }
-    .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 36px; margin-bottom: 32px; }
-    footer .brand img { height: 56px; opacity: 0.55; filter: brightness(0) invert(1); margin-bottom: 12px; transition: opacity .3s var(--ease); }
-    footer .brand:hover img { opacity: 0.85; }
-    footer h4 { color: #fff; font-family: "Inter", sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
-    footer a { display: block; padding: 5px 0; transition: color .2s var(--ease); }
-    footer a:hover { color: var(--accent-soft); }
-    .foot-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; color: rgba(246,244,239,0.6); }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 920px) {
-      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 36px; }
-      .hero-visual .frame { aspect-ratio: 4/3.5; }
-      .services-grid, .steps { grid-template-columns: repeat(2, 1fr); }
-      .foot-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 620px) {
-      section.block, .hero, .quote, .cta-final { padding-left: 0; padding-right: 0; }
-      .services-grid, .steps, .foot-grid, .stats { grid-template-columns: 1fr; }
-      .nav-links { display: none !important; }
-      .menu-btn { display: inline-flex; }
-      .nav .btn-nav-book { display: none; }
-      .hero-ctas .btn { flex: 1 1 100%; justify-content: center; }
-      .hero-visual .badge { right: 8px; }
-      body { padding-bottom: 76px; }
-      .sticky-cta { display: flex; }
-    }
-    @media (min-width: 621px) { .menu-btn { display: none; } .nav-links { display: inline-flex; } .sticky-cta { display: none !important; } }
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
-      .hero-visual .badge { animation: none; }
-      .hero-visual .frame img { transition: none !important; }
-      .mobile-menu, .menu-overlay, .sticky-cta { transition: none !important; }
-      html { scroll-behavior: auto; }
-    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(31,58,61,0.30); background: #2c5155; }
+    .foot { color: var(--ink-mute); font-size: 13px; margin-top: 36px; }
+    @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
   </style>
 </head>
 <body>
-
-  <!-- ===== Top bar ===== -->
-  <header class="topbar" id="topbar">
-    <div class="wrap">
-      <nav class="nav">
-        <a class="brand" href="#top" aria-label="Wortley Osteopathy home">
-          <img src="/assets/logo.png" alt="Wortley Osteopathy" />
-        </a>
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#approach">Approach</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <a class="btn btn-primary btn-nav-book" href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">Book Now</a>
-        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-        </button>
-      </nav>
+  <main class="wrap">
+    <img class="logo" src="/assets/logo.png" alt="Wortley Osteopathy" />
+    <p class="tagline">Wortley Osteopathy</p>
+    <div class="card">
+      <p><strong>Gentle, hands-on manual osteopathy in Wortley Village, London.</strong></p>
+      <p>Opening soon. Mindy Menard, RMO.</p>
     </div>
-    <div class="menu-overlay" id="menuOverlay"></div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#approach">Approach</a>
-      <a href="#contact">Contact</a>
-      <a href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">Book an Appointment</a>
-    </div>
-  </header>
-
-  <!-- ===== Hero ===== -->
-  <section class="hero" id="top">
-    <div class="wrap">
-      <div class="hero-grid">
-        <div class="hero-text">
-          <span class="eyebrow reveal"><span class="dot"></span> Manual Osteopathy &middot; Wortley Village, London ON</span>
-          <h1 class="reveal d1">Gentle, hands-on care that helps your body <em>move freely again</em>.</h1>
-          <p class="lead reveal d2">Personalized osteopathic treatment for pain, stiffness, and whole-body wellness, delivered with a calm, manual, and deeply individual approach by Mindy Menard, RMO.</p>
-          <div class="hero-ctas reveal d3">
-            <a class="btn btn-primary" href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">
-              Book an Appointment
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-            <a class="btn btn-ghost" href="#services">Explore Services</a>
-          </div>
-          <div class="trust reveal d4">
-            <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Direct insurance billing</span>
-            <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Registered member, OAO</span>
-            <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Online booking 24/7</span>
-          </div>
-        </div>
-        <div class="hero-visual reveal d2">
-          <div class="frame">
-            <img class="is-active" src="/assets/img/Hero.jpg" alt="Wortley Osteopathy treatment room" fetchpriority="high" />
-            <img src="/assets/img/Hero2.jpg" alt="Osteopathic treatment in progress" fetchpriority="high" />
-          </div>
-          <div class="badge">
-            <span class="ico">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            </span>
-            <div>
-              <div class="t1">Next available</div>
-              <div class="t2">This week</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sticky mobile CTA (mobile only, slides up after hero) -->
-  <div class="sticky-cta" id="stickyCta">
-    <a class="btn btn-primary" href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">
-      Book Now
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-    </a>
-  </div>
-
-  <!-- ===== About ===== -->
-  <section class="block about" id="about">
-    <div class="wrap">
-      <div class="about-grid">
-        <div class="media reveal">
-          <img src="/assets/img/IMG_2377.jpeg" alt="Osteopathic treatment in progress at Wortley Osteopathy" />
-        </div>
-        <div class="about-text">
-          <span class="eyebrow reveal"><span class="dot"></span> About the practice</span>
-          <h2 class="reveal d1">Calm, considered care in the heart of Wortley Village.</h2>
-          <p class="reveal d2">Wortley Osteopathy is a small, independent manual osteopathy practice on Wortley Road in London, Ontario. Treatments are unhurried, one-on-one, and built around what your body is telling us, not a one-size-fits-all protocol.</p>
-          <p class="reveal d2">Whether you are recovering from injury, managing chronic pain, or simply feeling &ldquo;off,&rdquo; osteopathic treatment works with your body&rsquo;s own ability to heal: gentle manual techniques that release tension, restore mobility, and calm the nervous system.</p>
-          <div class="stats reveal d3">
-            <div class="stat"><div class="num">60+</div><div class="lbl">min initial assessment</div></div>
-            <div class="stat"><div class="num">1:1</div><div class="lbl">dedicated practitioner</div></div>
-            <div class="stat"><div class="num">100%</div><div class="lbl">manual, hands-on care</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Services ===== -->
-  <section class="block services" id="services">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow reveal"><span class="dot"></span> Services</span>
-        <h2 class="reveal d1">What osteopathy can help with</h2>
-        <p class="reveal d2">Every treatment is tailored to you. These are the concerns patients most often come in with, though you don&rsquo;t need a &ldquo;reason&rdquo; beyond wanting to feel better.</p>
-      </div>
-      <div class="services-grid">
-        <article class="service reveal">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v3a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M12 11v6"/><path d="M9 22l3-5 3 5"/></svg></div>
-          <h3>Back &amp; Neck Pain</h3>
-          <p>Acute or chronic spinal tension, postural strain, and disc-related discomfort addressed through gentle joint and soft-tissue work.</p>
-        </article>
-        <article class="service reveal d1">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-          <h3>Headaches &amp; Migraines</h3>
-          <p>Cranial and cervical techniques that calm the nervous system and reduce the frequency and intensity of tension headaches.</p>
-        </article>
-        <article class="service reveal d2">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
-          <h3>Joint Mobility</h3>
-          <p>Stiff shoulders, hips, knees, and ankles restored through articulation, fluid movement, and targeted manual release.</p>
-        </article>
-        <article class="service reveal">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c4-6 14-6 18 0"/><path d="M3 12c4 6 14 6 18 0"/></svg></div>
-          <h3>Digestive Health</h3>
-          <p>Visceral manipulation supports healthy organ rhythm and can ease bloating, reflux, and stress-driven digestive tension.</p>
-        </article>
-        <article class="service reveal d1">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
-          <h3>Posture &amp; Alignment</h3>
-          <p>For desk workers, drivers, and anyone held in one position too long: rebalance the structure, ease the strain.</p>
-        </article>
-        <article class="service reveal d2">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-8-4.5-8-11a4 4 0 0 1 8-2 4 4 0 0 1 8 2c0 6.5-8 11-8 11z"/></svg></div>
-          <h3>Stress &amp; Nervous System</h3>
-          <p>Subtle craniosacral and fascial work that down-shifts the fight-or-flight response and lets the body actually rest.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Approach ===== -->
-  <section class="block approach" id="approach">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow reveal"><span class="dot"></span> Your visit</span>
-        <h2 class="reveal d1">A simple, unhurried path to feeling better</h2>
-        <p class="reveal d2">From first hello to follow-up, you&rsquo;re in the room with one practitioner who knows your story.</p>
-      </div>
-      <div class="steps">
-        <div class="step reveal">
-          <div class="n"></div>
-          <h3>Book online</h3>
-          <p>Choose a time that suits you through our secure online calendar. New and returning patients welcome.</p>
-        </div>
-        <div class="step reveal d1">
-          <div class="n"></div>
-          <h3>Initial assessment</h3>
-          <p>A 60-minute first visit: full history, posture and mobility assessment, and your first hands-on treatment.</p>
-        </div>
-        <div class="step reveal d2">
-          <div class="n"></div>
-          <h3>Personalized plan</h3>
-          <p>We discuss findings, recommend a realistic treatment timeline, and tailor every session to how you respond.</p>
-        </div>
-        <div class="step reveal d3">
-          <div class="n"></div>
-          <h3>Follow-up care</h3>
-          <p>30 to 45 minute follow-ups to build momentum, with clear at-home guidance to keep you progressing between visits.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Testimonial ===== -->
-  <section class="quote">
-    <div class="wrap">
-      <div class="inner reveal">
-        <div class="mark">&ldquo;</div>
-        <blockquote>I came in with chronic lower back pain I&rsquo;d accepted as normal. After a few sessions I moved in ways I hadn&rsquo;t in years. Mindy listens with her hands as much as her ears.</blockquote>
-        <div class="who"><strong>A Wortley Osteopathy patient</strong>London, ON</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Contact ===== -->
-  <section class="block contact" id="contact">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow reveal"><span class="dot"></span> Visit &amp; contact</span>
-        <h2 class="reveal d1">Find us in Wortley Village</h2>
-        <p class="reveal d2">Free street parking. Accessible entrance. Easy online booking any time of day.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="info-card reveal">
-          <h3>Practice details</h3>
-          <div class="info-row">
-            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <div><div class="lbl">Address</div><a class="val" href="https://maps.google.com/?q=320+Wortley+Road+Unit+2+London+ON+N6C+3R7" target="_blank" rel="noopener">320 Wortley Road, Unit #2<br/>London, ON N6C 3R7</a></div>
-          </div>
-          <div class="info-row">
-            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-            <div><div class="lbl">Phone</div><a class="val" href="tel:+15196703329">(519) 670-3329</a></div>
-          </div>
-          <div class="info-row">
-            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></span>
-            <div><div class="lbl">Email</div><a class="val" href="mailto:mindy.menard@yahoo.com">mindy.menard@yahoo.com</a></div>
-          </div>
-          <div class="info-row">
-            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-            <div><div class="lbl">Hours</div><div class="val">Tue&ndash;Thu 9am&ndash;6pm &middot; Fri&ndash;Sat 9am&ndash;3pm</div></div>
-          </div>
-          <a class="btn btn-primary" style="margin-top:22px;width:100%;justify-content:center" href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">Book an Appointment</a>
-        </div>
-        <div class="map-wrap reveal d1">
-          <iframe title="Map to Wortley Osteopathy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2919.582567836975!2d-81.2489914!3d42.9660004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef2262b705baf%3A0xba6b6cea839f358c!2s320%20Wortley%20Rd%20%232%2C%20London%2C%20ON%20N6C%203R7!5e0!3m2!1sen!2sca!4v1782754949944!5m2!1sen!2sca" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Final CTA ===== -->
-  <section class="cta-final">
-    <div class="wrap">
-      <h2 class="reveal">Ready to feel more like yourself?</h2>
-      <p class="reveal d1">Book your appointment online in under a minute. Same-week appointments often available.</p>
-      <a class="btn btn-primary reveal d2" href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">
-        Book on Jane
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- ===== Footer ===== -->
-  <footer>
-    <div class="wrap">
-      <div class="foot-grid">
-        <div class="brand">
-          <img src="/assets/logo.png" alt="Wortley Osteopathy" />
-          <p style="font-size:14px;max-width:280px">Manual osteopathic care in Wortley Village, London, Ontario. Gentle, hands-on treatment for the whole body.</p>
-        </div>
-        <div>
-          <h4>Explore</h4>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#approach">Your visit</a>
-        </div>
-        <div>
-          <h4>Visit</h4>
-          <a href="https://maps.google.com/?q=320+Wortley+Road+Unit+2+London+ON+N6C+3R7" target="_blank" rel="noopener">320 Wortley Road, Unit #2<br/>London, ON N6C 3R7</a>
-          <a href="tel:+15196703329">(519) 670-3329</a>
-          <a href="mailto:mindy.menard@yahoo.com">mindy.menard@yahoo.com</a>
-          <a href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">Book online &rarr;</a>
-        </div>
-      </div>
-      <div class="foot-bottom">
-        <span>&copy; <span id="year"></span> Wortley Osteopathy. All rights reserved.</span>
-        <span>Wortley Village &middot; London, ON</span>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile menu
-    const btn = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    const overlay = document.getElementById('menuOverlay');
-    let menuOpen = false;
-    const openMenu = () => {
-      menuOpen = true; menu.classList.add('open'); overlay.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden';
-    };
-    const closeMenu = () => {
-      menuOpen = false; menu.classList.remove('open'); overlay.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
-    };
-    btn.addEventListener('click', () => { menuOpen ? closeMenu() : openMenu(); });
-    overlay.addEventListener('click', closeMenu);
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-
-    // Sticky nav shadow + sticky CTA
-    const topbar = document.getElementById('topbar');
-    const stickyCta = document.getElementById('stickyCta');
-    const hero = document.querySelector('.hero');
-    const onScroll = () => {
-      topbar.classList.toggle('scrolled', window.scrollY > 8);
-      if (stickyCta && hero) {
-        const heroBottom = hero.offsetTop + hero.offsetHeight;
-        stickyCta.classList.toggle('on', window.scrollY + window.innerHeight > heroBottom);
-      }
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-    // Hero crossfade
-    const slides = document.querySelectorAll('.hero-visual .frame img');
-    let i = 0;
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (slides.length > 1 && !prefersReduced) {
-      setInterval(() => {
-        slides[i].classList.remove('is-active');
-        i = (i + 1) % slides.length;
-        slides[i].classList.add('is-active');
-      }, 4500);
-    }
-
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <p class="foot">320 Wortley Road, Unit #2 &middot; London, ON N6C 3R7<br/>(519) 670-3329 &middot; mindy.menard@yahoo.com</p>
+  </main>
 </body>
 </html>
