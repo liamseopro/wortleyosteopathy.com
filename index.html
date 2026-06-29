@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wortley Osteopathy &mdash; Manual Osteopathic Care in London, ON</title>
+  <title>Wortley Osteopathy | Manual Osteopathic Care in London, ON</title>
   <meta name="description" content="Wortley Osteopathy in Wortley Village, London, ON. Gentle, hands-on manual osteopathy for pain, mobility, and whole-body wellness. Book online with Mindy Menard, RMO." />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Wortley Osteopathy &mdash; Manual Osteopathic Care in London, ON" />
+  <meta property="og:title" content="Wortley Osteopathy | Manual Osteopathic Care in London, ON" />
   <meta property="og:description" content="Gentle, hands-on manual osteopathy in Wortley Village, London, ON. Book online today." />
   <meta property="og:url" content="https://wortleyosteopathy.com" />
   <meta property="og:image" content="/assets/img/Hero.jpg" />
@@ -18,7 +18,7 @@
   <meta name="google-site-verification" content="uV9_c1UGjgAr91lRKeZsSWe9PfS0M8XxCIdSMMfOols" />
   <link rel="canonical" href="https://wortleyosteopathy.com/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Wortley Osteopathy &mdash; Manual Osteopathic Care in London, ON" />
+  <meta name="twitter:title" content="Wortley Osteopathy | Manual Osteopathic Care in London, ON" />
   <meta name="twitter:description" content="Gentle, hands-on manual osteopathy in Wortley Village, London, ON. Book online today." />
   <meta name="twitter:image" content="https://wortleyosteopathy.com/assets/img/Hero.jpg" />
   <meta property="og:image:alt" content="Wortley Osteopathy treatment room" />
@@ -43,7 +43,7 @@
       "streetAddress": "320 Wortley Road Unit #2",
       "addressLocality": "London",
       "addressRegion": "ON",
-      "postalCode": "N6C 3P7",
+      "postalCode": "N6C 3R7",
       "addressCountry": "CA"
     },
     "openingHoursSpecification": [
@@ -152,8 +152,8 @@
 
     .hero-visual { position: relative; }
     .hero-visual .frame { position: relative; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 4/5; }
-    .hero-visual .frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
-    .hero-visual:hover .frame img { transform: scale(1.04); }
+    .hero-visual .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.6s var(--ease); }
+    .hero-visual .frame img.is-active { opacity: 1; }
     .hero-visual .badge {
       position: absolute; right: -14px; bottom: 36px;
       background: var(--card); border-radius: 16px; padding: 14px 18px;
@@ -210,13 +210,6 @@
     .step h3 { font-size: 18px; margin: 8px 0 8px; }
     .step p { font-size: 14px; color: var(--ink-soft); }
 
-    /* ===== Gallery ===== */
-    .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-    .gallery .tile { overflow: hidden; border-radius: 14px; aspect-ratio: 1; box-shadow: var(--shadow-sm); cursor: pointer; }
-    .gallery .tile.tall { grid-row: span 2; aspect-ratio: 1/2.05; }
-    .gallery .tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
-    .gallery .tile:hover img { transform: scale(1.08); }
-
     /* ===== Testimonial ===== */
     .quote { background: var(--teal-2); color: #f6f4ef; padding: 84px 0; position: relative; overflow: hidden; }
     .quote::before { content:""; position:absolute; right:-100px; top:-100px; width:340px; height:340px; border-radius:50%; background: rgba(184,137,58,0.16); }
@@ -249,7 +242,8 @@
     /* ===== Footer ===== */
     footer { background: var(--teal-2); color: rgba(246,244,239,0.78); padding: 48px 0 28px; }
     .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 36px; margin-bottom: 32px; }
-    footer .brand img { height: 38px; filter: brightness(0) invert(1); margin-bottom: 12px; }
+    footer .brand img { height: 38px; opacity: 0.55; filter: brightness(0) invert(1); margin-bottom: 12px; transition: opacity .3s var(--ease); }
+    footer .brand:hover img { opacity: 0.85; }
     footer h4 { color: #fff; font-family: "Inter", sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
     footer a { display: block; padding: 5px 0; transition: color .2s var(--ease); }
     footer a:hover { color: var(--accent-soft); }
@@ -260,13 +254,11 @@
       .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 36px; }
       .hero-visual .frame { aspect-ratio: 4/3.5; }
       .services-grid, .steps { grid-template-columns: repeat(2, 1fr); }
-      .gallery { grid-template-columns: repeat(3, 1fr); }
-      .gallery .tile.tall { grid-row: auto; aspect-ratio: 1; }
       .foot-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 620px) {
       section.block, .hero, .quote, .cta-final { padding-left: 0; padding-right: 0; }
-      .services-grid, .steps, .gallery, .foot-grid, .stats { grid-template-columns: 1fr; }
+      .services-grid, .steps, .foot-grid, .stats { grid-template-columns: 1fr; }
       .nav-links { display: none !important; }
       .menu-btn { display: inline-flex; }
       .hero-ctas .btn { flex: 1 1 100%; justify-content: center; }
@@ -276,6 +268,7 @@
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
       .hero-visual .badge { animation: none; }
+      .hero-visual .frame img { transition: none !important; }
       html { scroll-behavior: auto; }
     }
   </style>
@@ -293,7 +286,6 @@
           <a href="#about">About</a>
           <a href="#services">Services</a>
           <a href="#approach">Approach</a>
-          <a href="#gallery">Clinic</a>
           <a href="#contact">Contact</a>
         </div>
         <a class="btn btn-primary" href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">Book Now</a>
@@ -306,7 +298,6 @@
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#approach">Approach</a>
-      <a href="#gallery">Clinic</a>
       <a href="#contact">Contact</a>
       <a href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">Book an Appointment</a>
     </div>
@@ -319,7 +310,7 @@
         <div class="hero-text">
           <span class="eyebrow reveal"><span class="dot"></span> Manual Osteopathy &middot; Wortley Village, London ON</span>
           <h1 class="reveal d1">Gentle, hands-on care that helps your body <em>move freely again</em>.</h1>
-          <p class="lead reveal d2">Personalized osteopathic treatment for pain, stiffness, and whole-body wellness &mdash; delivered with a calm, manual, and deeply individual approach by Mindy Menard, RMO.</p>
+          <p class="lead reveal d2">Personalized osteopathic treatment for pain, stiffness, and whole-body wellness, delivered with a calm, manual, and deeply individual approach by Mindy Menard, RMO.</p>
           <div class="hero-ctas reveal d3">
             <a class="btn btn-primary" href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">
               Book an Appointment
@@ -335,7 +326,8 @@
         </div>
         <div class="hero-visual reveal d2">
           <div class="frame">
-            <img src="/assets/img/Hero.jpg" alt="Wortley Osteopathy treatment room" fetchpriority="high" />
+            <img class="is-active" src="/assets/img/Hero.jpg" alt="Wortley Osteopathy treatment room" fetchpriority="high" />
+            <img src="/assets/img/Hero2.jpg" alt="Osteopathic treatment in progress" fetchpriority="high" />
           </div>
           <div class="badge">
             <span class="ico">
@@ -356,13 +348,13 @@
     <div class="wrap">
       <div class="about-grid">
         <div class="media reveal">
-          <img src="/assets/img/Hero2.jpg" alt="Osteopathic treatment in progress at Wortley Osteopathy" />
+          <img src="/assets/img/IMG_2377.jpeg" alt="Osteopathic treatment in progress at Wortley Osteopathy" />
         </div>
         <div class="about-text">
           <span class="eyebrow reveal"><span class="dot"></span> About the practice</span>
           <h2 class="reveal d1">Calm, considered care in the heart of Wortley Village.</h2>
-          <p class="reveal d2">Wortley Osteopathy is a small, independent manual osteopathy practice on Wortley Road in London, Ontario. Treatments are unhurried, one-on-one, and built around what your body is telling us &mdash; not a one-size-fits-all protocol.</p>
-          <p class="reveal d2">Whether you&rsquo;re recovering from injury, managing chronic pain, or simply feeling &ldquo;off,&rdquo; osteopathic treatment works with your body&rsquo;s own ability to heal &mdash; gentle manual techniques that release tension, restore mobility, and calm the nervous system.</p>
+          <p class="reveal d2">Wortley Osteopathy is a small, independent manual osteopathy practice on Wortley Road in London, Ontario. Treatments are unhurried, one-on-one, and built around what your body is telling us, not a one-size-fits-all protocol.</p>
+          <p class="reveal d2">Whether you are recovering from injury, managing chronic pain, or simply feeling &ldquo;off,&rdquo; osteopathic treatment works with your body&rsquo;s own ability to heal: gentle manual techniques that release tension, restore mobility, and calm the nervous system.</p>
           <div class="stats reveal d3">
             <div class="stat"><div class="num">60+</div><div class="lbl">min initial assessment</div></div>
             <div class="stat"><div class="num">1:1</div><div class="lbl">dedicated practitioner</div></div>
@@ -379,7 +371,7 @@
       <div class="section-head">
         <span class="eyebrow reveal"><span class="dot"></span> Services</span>
         <h2 class="reveal d1">What osteopathy can help with</h2>
-        <p class="reveal d2">Every treatment is tailored to you. These are the concerns patients most often come in with &mdash; though you don&rsquo;t need a &ldquo;reason&rdquo; beyond wanting to feel better.</p>
+        <p class="reveal d2">Every treatment is tailored to you. These are the concerns patients most often come in with, though you don&rsquo;t need a &ldquo;reason&rdquo; beyond wanting to feel better.</p>
       </div>
       <div class="services-grid">
         <article class="service reveal">
@@ -405,7 +397,7 @@
         <article class="service reveal d1">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
           <h3>Posture &amp; Alignment</h3>
-          <p>For desk workers, drivers, and anyone held in one position too long &mdash; rebalance the structure, ease the strain.</p>
+          <p>For desk workers, drivers, and anyone held in one position too long: rebalance the structure, ease the strain.</p>
         </article>
         <article class="service reveal d2">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-8-4.5-8-11a4 4 0 0 1 8-2 4 4 0 0 1 8 2c0 6.5-8 11-8 11z"/></svg></div>
@@ -443,26 +435,8 @@
         <div class="step reveal d3">
           <div class="n"></div>
           <h3>Follow-up care</h3>
-          <p>30&ndash;45 minute follow-ups to build momentum, with clear at-home guidance to keep you progressing between visits.</p>
+          <p>30 to 45 minute follow-ups to build momentum, with clear at-home guidance to keep you progressing between visits.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Gallery ===== -->
-  <section class="block" id="gallery">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow reveal"><span class="dot"></span> The clinic</span>
-        <h2 class="reveal d1">A calm space, built for healing</h2>
-        <p class="reveal d2">Tucked into Wortley Village, our clinic is quiet, private, and designed to put your nervous system at ease.</p>
-      </div>
-      <div class="gallery">
-        <div class="tile tall reveal"><img src="/assets/img/IMG_0581.jpeg" alt="Wortley Osteopathy clinic interior" loading="lazy" /></div>
-        <div class="tile reveal d1"><img src="/assets/img/IMG_2377.jpeg" alt="Treatment room detail" loading="lazy" /></div>
-        <div class="tile reveal d2"><img src="/assets/img/IMG_3411.jpeg" alt="Clinic space" loading="lazy" /></div>
-        <div class="tile reveal d3"><img src="/assets/img/IMG_3398.jpeg" alt="Osteopathy clinic" loading="lazy" /></div>
-        <div class="tile tall reveal d2"><img src="/assets/img/Services.png" alt="Services illustration" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -503,12 +477,12 @@
           </div>
           <div class="info-row">
             <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-            <div><div class="lbl">Hours</div><div class="val">Tue&ndash;Thu 9&ndash;6 &middot; Fri&ndash;Sat 9&ndash;3</div></div>
+            <div><div class="lbl">Hours</div><div class="val">Tue to Thu 9 to 6 &middot; Fri to Sat 9 to 3</div></div>
           </div>
           <a class="btn btn-primary" style="margin-top:22px;width:100%;justify-content:center" href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">Book an Appointment</a>
         </div>
         <div class="map-wrap reveal d1">
-          <iframe title="Map to Wortley Osteopathy" src="https://www.openstreetmap.org/export/embed.html?bbox=-81.275%2C42.975%2C-81.255%2C42.985&amp;layer=mapnik&amp;marker=42.9800%2C-81.2650" loading="lazy"></iframe>
+          <iframe title="Map to Wortley Osteopathy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2919.582567836975!2d-81.2489914!3d42.9660004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef2262b705baf%3A0xba6b6cea839f358c!2s320%20Wortley%20Rd%20%232%2C%20London%2C%20ON%20N6C%203R7!5e0!3m2!1sen!2sca!4v1782754949944!5m2!1sen!2sca" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
       </div>
     </div>
@@ -530,7 +504,7 @@
   <footer>
     <div class="wrap">
       <div class="foot-grid">
-        <div>
+        <div class="brand">
           <img src="/assets/logo.png" alt="Wortley Osteopathy" />
           <p style="font-size:14px;max-width:280px">Manual osteopathic care in Wortley Village, London, Ontario. Gentle, hands-on treatment for the whole body.</p>
         </div>
@@ -539,7 +513,6 @@
           <a href="#about">About</a>
           <a href="#services">Services</a>
           <a href="#approach">Your visit</a>
-          <a href="#gallery">Clinic</a>
         </div>
         <div>
           <h4>Visit</h4>
@@ -582,6 +555,18 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Hero crossfade
+    const slides = document.querySelectorAll('.hero-visual .frame img');
+    let i = 0;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (slides.length > 1 && !prefersReduced) {
+      setInterval(() => {
+        slides[i].classList.remove('is-active');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('is-active');
+      }, 4500);
+    }
 
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
