@@ -3,78 +3,337 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wortley Osteopathy &mdash; Coming Soon</title>
-  <meta name="description" content="Wortley Osteopathy is coming soon." />
+  <title>Wortley Osteopathy | Classical Manual Osteopathy in London, ON</title>
+  <meta name="description" content="Wortley Osteopathy provides classical manual osteopathy in the heart of Wortley Village, helping restore movement, function, and wellbeing through gentle hands-on care." />
+  <meta name="robots" content="index, follow" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Wortley Osteopathy &mdash; Coming Soon" />
-  <meta property="og:description" content="Wortley Osteopathy is coming soon." />
-  <meta property="og:url" content="https://wortleyosteopathy.com" />
   <meta name="theme-color" content="#1f3a3d" />
-  <meta name="google-site-verification" content="uV9_c1UGjgAr91lRKeZsSWe9PfS0M8XxCIdSMMfOols" />
   <link rel="canonical" href="https://wortleyosteopathy.com/" />
+  <meta name="google-site-verification" content="uV9_c1UGjgAr91lRKeZsSWe9PfS0M8XxCIdSMMfOols" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #f6f4ef;
+      --bg-2: #efeae0;
       --ink: #1f3a3d;
       --ink-soft: #4a5f62;
+      --ink-mute: #7a8a8c;
       --accent: #b8893a;
+      --accent-soft: #d8b06a;
       --line: #e4e0d6;
       --card: #ffffff;
+      --teal-1: #2c5155;
+      --teal-2: #1f3a3d;
+      --shadow-sm: 0 1px 2px rgba(31,58,61,0.06), 0 2px 8px rgba(31,58,61,0.04);
+      --shadow-md: 0 6px 24px rgba(31,58,61,0.10);
+      --shadow-lg: 0 18px 60px rgba(31,58,61,0.16);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --section-y: clamp(64px, 8vw, 96px);
+      --section-y-tight: clamp(56px, 7vw, 82px);
+      --grid-gap: clamp(18px, 2.2vw, 24px);
+      --copy-gap: 18px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(1200px 600px at 110% -10%, rgba(184,137,58,0.10), transparent 60%),
-        radial-gradient(900px 500px at -10% 110%, rgba(31,58,61,0.08), transparent 60%),
-        var(--bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 20px;
-      min-height: 100vh;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    .wrap {
-      width: 100%;
-      max-width: 640px;
-      text-align: center;
-    }
-    .logo {
-      max-width: 240px;
-      max-height: 160px;
-      width: auto;
-      height: auto;
-      margin: 0 auto 32px;
-      display: block;
-    }
-    h1 {
-      font-size: clamp(28px, 6vw, 40px);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      margin-bottom: 18px;
-    }
-    p.lede {
-      color: var(--ink-soft);
-      font-size: 17px;
-      max-width: 480px;
-      margin: 0 auto 32px;
-    }
+    html { scroll-behavior: smooth; scroll-padding-top: 128px; -webkit-text-size-adjust: 100%; }
+    body { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    h1, h2, h3, h4 { font-family: "Fraunces", Georgia, serif; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; color: var(--teal-2); text-wrap: balance; }
+    p { text-wrap: pretty; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+    .reveal.in { opacity: 1; transform: none; }
+    .reveal.d1 { transition-delay: .08s; }
+    .reveal.d2 { transition-delay: .16s; }
+    .reveal.d3 { transition-delay: .24s; }
+    .topbar { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(1.2) blur(10px); background: rgba(246,244,239,0.86); border-bottom: 1px solid rgba(228,224,214,0.7); transition: box-shadow .3s var(--ease), background .3s var(--ease); }
+    .topbar.scrolled { box-shadow: var(--shadow-sm); background: rgba(246,244,239,0.96); }
+    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 110px; }
+    .brand img { height: 86px; width: auto; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 15px; font-weight: 500; color: var(--ink-soft); transition: color .2s var(--ease); position: relative; }
+    .nav-links a::after { content:""; position:absolute; left:0; bottom:-6px; height:2px; width:0; background:var(--accent); transition: width .3s var(--ease); }
+    .nav-links a:hover { color: var(--teal-2); }
+    .nav-links a:hover::after { width: 100%; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 999px; font-weight: 600; font-size: 15px; cursor: pointer; transition: transform .2s var(--ease), box-shadow .25s var(--ease), background .2s var(--ease); white-space: nowrap; border: none; }
+    .btn-primary { background: var(--teal-2); color: #fff; box-shadow: 0 6px 18px rgba(31,58,61,0.22); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(31,58,61,0.30); background: var(--teal-1); }
+    .btn:focus-visible, .menu-btn:focus-visible, .field input:focus-visible, .field textarea:focus-visible, a:focus-visible { outline: 3px solid rgba(184,137,58,0.45); outline-offset: 3px; }
+    .btn:active { transform: translateY(0); }
+    .btn-ghost { background: transparent; color: var(--teal-2); border: 1.5px solid rgba(31,58,61,0.18); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; color: var(--teal-2); z-index: 60; }
+    .menu-overlay { position: fixed; inset: 0; z-index: 48; background: rgba(31,58,61,0.28); opacity: 0; pointer-events: none; transition: opacity .35s var(--ease); }
+    .menu-overlay.open { opacity: 1; pointer-events: auto; }
+    .mobile-menu { position: fixed; top: 88px; left: 0; right: 0; z-index: 52; display: flex; flex-direction: column; gap: 4px; padding: 20px 24px 28px; background: rgba(246,244,239,0.97); backdrop-filter: saturate(1.2) blur(12px); border-bottom: 1px solid var(--line); box-shadow: var(--shadow-md); transform: translateY(-14px); opacity: 0; pointer-events: none; transition: transform .35s var(--ease), opacity .3s var(--ease); }
+    .mobile-menu.open { transform: none; opacity: 1; pointer-events: auto; }
+    .mobile-menu a { padding: 14px 4px; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-weight: 500; font-size: 17px; }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 55; padding: 14px 20px calc(14px + env(safe-area-inset-bottom, 0px)); background: linear-gradient(0deg, rgba(246,244,239,0.98) 80%, rgba(246,244,239,0.75) 100%); border-top: 1px solid var(--line); transform: translateY(100%); transition: transform .4s var(--ease); display: none; justify-content: center; }
+    .sticky-cta.on { transform: none; }
+    .sticky-cta .btn { flex: 1; max-width: 480px; justify-content: center; }
+    .hero { position: relative; padding: clamp(56px, 7vw, 78px) 0 clamp(72px, 9vw, 104px); overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(900px 500px at 110% -10%, rgba(184,137,58,0.14), transparent 60%), radial-gradient(700px 500px at -10% 110%, rgba(31,58,61,0.10), transparent 60%); }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: rgba(184,137,58,0.12); color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 22px; white-space: nowrap; }
+    .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+    .hero h1 { font-size: clamp(38px, 5.4vw, 64px); line-height: 1.06; margin-bottom: 20px; }
+    .hero h1 em { font-style: italic; color: var(--accent); font-weight: 500; }
+    .hero .subhead { font-family: "Fraunces", Georgia, serif; font-size: clamp(22px, 3vw, 30px); color: var(--teal-1); line-height: 1.25; margin-bottom: 20px; }
+    .hero p.lead { font-size: clamp(16px, 2vw, 19px); color: var(--ink-soft); max-width: 580px; line-height: 1.72; margin-bottom: 34px; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-bottom: 24px; }
+    .hero-address { color: var(--ink-mute); font-size: 14px; }
+    .hero-visual { position: relative; }
+    .hero-visual .frame { position: relative; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 4/5; }
+    .hero-visual .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.6s var(--ease); }
+    .hero-visual .frame img.is-active { opacity: 1; }
+    .hero-visual .badge { position: absolute; right: -14px; bottom: 36px; background: var(--card); border-radius: 16px; padding: 14px 18px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 12px; animation: float 5s ease-in-out infinite; }
+    .hero-visual .badge .ico { width: 38px; height: 38px; border-radius: 50%; background: rgba(184,137,58,0.14); color: var(--accent); display: grid; place-items: center; }
+    .hero-visual .badge svg { width: 20px; height: 20px; }
+    .hero-visual .badge .t1 { font-size: 13px; color: var(--ink-mute); }
+    .hero-visual .badge .t2 { font-weight: 700; color: var(--teal-2); font-size: 15px; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    section.block { padding: var(--section-y) 0; position: relative; overflow: hidden; }
+    .section-head { text-align: center; max-width: 720px; margin: 0 auto clamp(38px, 5vw, 56px); position: relative; }
+    .section-head .eyebrow { margin-bottom: 16px; }
+    .section-head h2 { font-size: clamp(28px, 4vw, 42px); line-height: 1.16; margin-bottom: 16px; }
+    .section-head p { color: var(--ink-soft); font-size: 17px; line-height: 1.7; max-width: 660px; margin: 0 auto; }
+    .about { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .about::before { content:""; position:absolute; right:-6%; top:-10%; width:320px; height:320px; border-radius:50%; background: radial-gradient(circle, rgba(184,137,58,0.10), transparent 70%); }
+    .about::after { content:""; position:absolute; left:-5%; bottom:-15%; width:260px; height:260px; border-radius:50%; background: radial-gradient(circle, rgba(31,58,61,0.06), transparent 70%); }
+    .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: center; position: relative; }
+    .about-grid .media { border-radius: 20px; overflow: hidden; aspect-ratio: 4/5; box-shadow: var(--shadow-md); }
+    .about-grid .media img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .copy h2 { font-size: clamp(28px, 4vw, 42px); line-height: 1.16; margin-bottom: 24px; }
+    .copy p { color: var(--ink-soft); line-height: 1.72; margin-bottom: var(--copy-gap); }
+    .copy p:last-child { margin-bottom: 0; }
+    .narrative-copy { max-width: 780px; margin: 0 auto; text-align: left; background: rgba(255,255,255,0.56); border: 1px solid rgba(228,224,214,0.82); border-radius: var(--radius); padding: clamp(24px, 4vw, 36px); box-shadow: var(--shadow-sm); }
+    .narrative-copy p { font-size: 16px; line-height: 1.76; }
+    .narrative-copy .lead-copy { font-family: "Fraunces", Georgia, serif; font-size: clamp(20px, 2.4vw, 24px); line-height: 1.42; color: var(--teal-1); margin-bottom: 22px; }
+    .feature-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--grid-gap); margin-top: 32px; }
+    .feature { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 18px 16px; color: var(--teal-2); font-weight: 600; font-size: 14px; line-height: 1.45; text-align: center; transition: transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease), background .28s var(--ease); }
+    .feature:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); border-color: rgba(184,137,58,0.26); background: #fff; }
+    .conditions { background: linear-gradient(180deg, var(--bg-2), var(--bg)); }
+    .conditions::before { content:""; position:absolute; left:-4%; top:-6%; width:280px; height:280px; border-radius:50%; background: radial-gradient(circle, rgba(184,137,58,0.08), transparent 70%); }
+    .condition-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--grid-gap); position: relative; }
+    .condition { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; font-weight: 600; line-height: 1.45; color: var(--teal-2); box-shadow: var(--shadow-sm); transition: transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease); }
+    .condition:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(184,137,58,0.28); }
+    .expect { background: linear-gradient(180deg, #fff 0%, var(--card) 46%, var(--bg) 100%); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .expect-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--grid-gap); position: relative; }
+    .step { background: var(--bg); border-radius: var(--radius); padding: 30px; border: 1px solid var(--line); transition: transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease), background .28s var(--ease); }
+    .step:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: rgba(184,137,58,0.24); background: #fff; }
+    .step h3 { font-size: 20px; line-height: 1.22; margin-bottom: 14px; }
+    .step p { color: var(--ink-soft); font-size: 15px; line-height: 1.65; }
+    .faq { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%); }
+    .faq::after { content:""; position:absolute; right:-4%; bottom:-10%; width:300px; height:300px; border-radius:50%; background: radial-gradient(circle, rgba(31,58,61,0.05), transparent 70%); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--grid-gap); position: relative; }
+    .faq-item { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow-sm); transition: transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease); }
+    .faq-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(184,137,58,0.22); }
+    .faq-item h3 { font-size: 19px; line-height: 1.24; margin-bottom: 14px; }
+    .faq-item p, .faq-item li { color: var(--ink-soft); font-size: 15px; line-height: 1.65; }
+    .faq-item ul { padding-left: 20px; margin-top: 10px; }
+    .cta-final { padding: var(--section-y-tight) 0; text-align: center; background: var(--bg-2); border-top: 1px solid var(--line); position: relative; overflow: hidden; }
+    .cta-final::before { content:""; position:absolute; left:-10%; bottom:-20%; width:280px; height:280px; border-radius:50%; background: radial-gradient(circle, rgba(184,137,58,0.08), transparent 70%); }
+    .cta-final h2 { font-size: clamp(28px, 4vw, 40px); line-height: 1.16; margin-bottom: 16px; position: relative; }
+    .cta-final p { color: var(--ink-soft); max-width: 640px; line-height: 1.7; margin: 0 auto 30px; }
+    .contact-layout { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(32px, 5vw, 56px); align-items: start; text-align: left; position: relative; }
+    .contact-copy { text-align: left; }
+    .contact-copy .contact-intro { color: var(--ink-soft); font-size: 17px; line-height: 1.7; margin: 0 0 22px; max-width: 440px; }
+    .contact-copy .contact-address { color: var(--teal-2); font-size: 15px; line-height: 1.65; margin: 0 0 22px; }
+    .contact-copy .btn { margin-top: 2px; }
+    .footer-intro { font-size: 14px; line-height: 1.7; max-width: 300px; }
+    .contact-form { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow-md); }
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 8px; color: var(--teal-2); }
+    .field input, .field textarea { width: 100%; border: 1px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); font: inherit; line-height: 1.5; padding: 13px 15px; outline: none; transition: border-color .2s var(--ease), box-shadow .2s var(--ease); }
+    .contact-submit { width: 100%; justify-content: center; }
+    .field textarea { min-height: 140px; resize: vertical; }
+    .field input:focus, .field textarea:focus { border-color: rgba(184,137,58,0.75); box-shadow: 0 0 0 4px rgba(184,137,58,0.12); }
+    .form-note { color: var(--ink-mute); font-size: 13px; margin-top: 12px; }
+    .form-status { display: none; margin-top: 14px; padding: 12px 14px; border-radius: 12px; font-size: 14px; }
+    .form-status.ok { display: block; background: rgba(31,58,61,0.08); color: var(--teal-2); }
+    .form-status.err { display: block; background: rgba(184,64,58,0.10); color: #7a2f27; }
+    footer { background: var(--teal-2); color: rgba(246,244,239,0.78); padding: 54px 0 30px; }
+    .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 44px; margin-bottom: 36px; }
+    footer .brand img { height: 76px; opacity: 0.65; filter: brightness(0) invert(1); margin-bottom: 12px; }
+    footer h4 { color: #fff; font-family: "Inter", sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
+    footer a { display: block; padding: 5px 0; transition: color .2s var(--ease); }
+    footer a:hover { color: var(--accent-soft); }
+    .foot-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; color: rgba(246,244,239,0.6); }
+    @media (max-width: 920px) { .hero { padding: 56px 0 76px; } section.block { padding: 72px 0; } .section-head { margin-bottom: 40px; } .hero-grid, .about-grid, .contact-layout { grid-template-columns: 1fr; gap: 40px; } .hero-visual .frame { aspect-ratio: 4/3.5; } .feature-grid { grid-template-columns: repeat(2, 1fr); } .condition-list, .expect-grid, .faq-grid { grid-template-columns: 1fr 1fr; } .foot-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 620px) { .wrap { padding: 0 20px; } .narrative-copy { padding: 22px; } .nav { min-height: 88px; } .brand img { height: 64px; } .nav-links, .nav .btn-nav-book { display: none !important; } .menu-btn { display: inline-flex; } .hero { padding: 42px 0 64px; } section.block { padding: 60px 0; } .cta-final { padding: 60px 0; } .section-head { margin-bottom: 32px; } .hero h1 { line-height: 1.08; } .hero-ctas .btn { flex: 1 1 100%; justify-content: center; } .hero-visual .badge { right: 8px; } .feature-grid, .condition-list, .expect-grid, .faq-grid, .foot-grid { gap: 16px; grid-template-columns: 1fr; } .step, .faq-item, .contact-form { padding: 22px; } body { padding-bottom: 76px; } .sticky-cta { display: flex; } }
+    @media (min-width: 621px) { .sticky-cta { display: none !important; } }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; transition: none !important; } .hero-visual .badge { animation: none; } .hero-visual .frame img, .mobile-menu, .menu-overlay, .sticky-cta, .feature, .condition, .step, .faq-item { transition: none !important; } .feature:hover, .condition:hover, .step:hover, .faq-item:hover { transform: none !important; } html { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <img class="logo" src="/assets/logo.png" alt="Wortley Osteopathy logo" />
-    <h1>Wortley Osteopathy</h1>
-    <p class="lede">Coming soon.</p>
-  </main>
+  <header class="topbar" id="topbar">
+    <div class="wrap">
+      <nav class="nav">
+        <a class="brand" href="#top" aria-label="Wortley Osteopathy home"><img src="/assets/logo.png" alt="Wortley Osteopathy" decoding="async" /></a>
+        <div class="nav-links"><a href="#about">About Mindy</a><a href="#osteopathy">Osteopathy</a><a href="#conditions">Conditions</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+        <a class="btn btn-primary btn-nav-book" href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">Book Now</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </nav>
+    </div>
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu"><a href="#about">About Mindy</a><a href="#osteopathy">Osteopathy</a><a href="#conditions">Conditions</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><a href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">Book an Appointment</a></div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <span class="eyebrow reveal"><span class="dot"></span> Classical Manual Osteopathy</span>
+          <h1 class="reveal d1">Treat the <em>Whole Body</em></h1>
+          <div class="subhead reveal d2">Classical Manual Osteopathy in the Heart of Wortley Village</div>
+          <p class="lead reveal d2">Using a gentle, hands-on approach, Wortley Osteopathy helps restore the body's natural movement and function so you can move with less pain, greater ease, and improved overall wellbeing.</p>
+          <div class="hero-ctas reveal d3"><a class="btn btn-primary" href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">Book Your Appointment</a><a class="btn btn-ghost" href="#about">Meet Mindy</a></div>
+          <p class="hero-address reveal d3">320 Wortley Road, Unit 2<br/>London, Ontario</p>
+        </div>
+        <div class="hero-visual reveal d2">
+          <div class="frame"><img class="is-active" src="/assets/img/Hero.jpg" alt="Wortley Osteopathy treatment room" fetchpriority="high" decoding="async" /><img src="/assets/img/Hero2.jpg" alt="Osteopathic treatment in progress" loading="eager" decoding="async" /></div>
+          <div class="badge"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><div><div class="t1">Online booking</div><div class="t2">JaneApp</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sticky-cta" id="stickyCta"><a class="btn btn-primary" href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">Book Your Appointment</a></div>
+
+  <section class="block about" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="media reveal"><img src="/assets/img/IMG_2377.jpeg" alt="Mindy Willis, Manual Osteopathic Therapist" loading="lazy" decoding="async" /></div>
+        <div class="copy">
+          <span class="eyebrow reveal"><span class="dot"></span> About Mindy</span>
+          <h2 class="reveal d1">Meet Mindy Willis, M.OMSc</h2>
+          <p class="reveal d2">Mindy Willis is a Manual Osteopathic Therapist dedicated to helping people reduce pain, restore mobility, and improve their overall health through personalized, hands-on treatment.</p>
+          <p class="reveal d2">A graduate of the Canadian Academy of Osteopathy, Mindy completed her studies with honours in 2024 and was awarded the prestigious A.T. Still Medal of Honour for academic excellence.</p>
+          <p class="reveal d2">Her practice is rooted in the principles of Classical Osteopathy, where every treatment considers the body as an interconnected system. Rather than focusing solely on symptoms, Mindy works to identify and address the underlying restrictions that may be affecting your body's ability to heal and function naturally.</p>
+          <p class="reveal d2">Prior to her journey into Osteopathy, Mindy was a certified Yoga Instructor with over 20 years of experience, including operating her own Yoga Studio, yoga classes, workshops, retreats and yoga teacher training programs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="osteopathy">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow reveal"><span class="dot"></span> What is Osteopathy?</span><h2 class="reveal d1">A Whole-Body Approach to Health</h2></div>
+      <div class="copy narrative-copy reveal d2"><p class="lead-copy">Manual Osteopathy is a gentle, hands-on therapy that focuses on improving the body's structure, movement, and natural ability to heal itself.</p><p>Rather than treating only the area where pain is felt, osteopathic treatment looks at how different systems throughout the body work together. Restrictions in one area can often affect movement and function elsewhere.</p><p>The goal is to restore balance throughout the body, improve mobility, reduce pain, and support optimal circulation, nerve function, and overall health.</p></div>
+      <div class="feature-grid reveal d2"><div class="feature">Fascia</div><div class="feature">Muscles and joints</div><div class="feature">Bones and Ligaments</div><div class="feature">Nerves</div><div class="feature">Visceral system</div></div>
+    </div>
+  </section>
+
+  <section class="block conditions" id="conditions">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow reveal"><span class="dot"></span> Conditions We Commonly Help</span><h2 class="reveal d1">Recent injury or long-standing discomfort</h2><p class="reveal d2">Every assessment begins with understanding how your body moves and what it needs, not simply where it hurts.</p></div>
+      <div class="condition-list"><div class="condition reveal">Neck pain</div><div class="condition reveal d1">Back pain</div><div class="condition reveal d2">Shoulder pain</div><div class="condition reveal d3">Hip pain</div><div class="condition reveal">Joint stiffness</div><div class="condition reveal d1">Muscle tension</div><div class="condition reveal d2">Sports injuries</div><div class="condition reveal d3">Postural issues</div><div class="condition reveal">Headaches</div><div class="condition reveal d1">Limited mobility</div><div class="condition reveal d2">Chronic pain</div><div class="condition reveal d3">Movement restrictions</div></div>
+    </div>
+  </section>
+
+  <section class="block expect" id="expect">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow reveal"><span class="dot"></span> What to Expect</span><h2 class="reveal d1">Your First Visit</h2><p class="reveal d2">Your first visit is designed to understand your goals, assess how your body is moving, and guide treatment at a comfortable pace.</p></div>
+      <div class="expect-grid"><div class="step reveal"><h3>Thorough assessment</h3><p>Mindy reviews your history, listens to what you are experiencing, and observes how your body moves before treatment begins.</p></div><div class="step reveal d1"><h3>Individualized treatment</h3><p>Treatment may vary depending on your body's needs that day. Some treatments are shorter and more focused, while others may involve additional hands-on work.</p></div><div class="step reveal d2"><h3>Positive change</h3><p>The goal is to provide enough treatment to encourage positive change while allowing your body the opportunity to adapt naturally.</p></div></div>
+    </div>
+  </section>
+
+  <section class="block faq" id="faq">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow reveal"><span class="dot"></span> Frequently Asked Questions</span><h2 class="reveal d1">Before your appointment</h2></div>
+      <div class="faq-grid">
+        <article class="faq-item reveal"><h3>What should I wear?</h3><p>Wear comfortable clothing that allows you to move easily, such as athletic wear, yoga pants, jogging pants, shorts, or a t-shirt. Please avoid restrictive clothing like jeans or dress pants. Dresses are welcome if shorts are worn underneath, and please bring or wear socks.</p></article>
+        <article class="faq-item reveal d1"><h3>How long are appointments?</h3><p>Treatment length varies depending on your body's needs. Every appointment is customized, and the amount of treatment provided is based on what your body can respond to comfortably.</p></article>
+        <article class="faq-item reveal"><h3>Can I exercise after treatment?</h3><p>It's generally recommended to let your body rest and begin its natural healing process after treatment. If you plan to exercise that day, it's usually better to do so before your appointment.</p></article>
+        <article class="faq-item reveal d1"><h3>How can I support my recovery?</h3><p>Simple activities can help your body respond well to treatment:</p><ul><li>Take a short walk</li><li>Stay hydrated</li><li>Enjoy a warm Epsom salt bath or shower</li><li>Get a good night's sleep</li></ul></article>
+        <article class="faq-item reveal"><h3>Is soreness normal?</h3><p>Yes. Some people experience mild soreness, stiffness, fatigue, or even increased energy during the first 24 to 36 hours after treatment. These responses are generally temporary and are part of your body's adjustment process.</p></article>
+        <article class="faq-item reveal d1"><h3>Is Osteopathy covered by insurance?</h3><p>Many extended health benefit plans include coverage for Manual Osteopathy. Coverage varies between providers, so we recommend checking directly with your insurance company before your appointment.</p></article>
+        <article class="faq-item reveal"><h3>How often should I come?</h3><p>Treatment frequency depends on your individual condition and how your body responds. Many patients begin with weekly appointments before transitioning to longer intervals as they improve. Your treatment plan will always be personalized to your goals and progress.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow reveal"><span class="dot"></span> Get in touch</span><h2 class="reveal d1">We would love to hear from you</h2></div>
+      <div class="contact-layout">
+        <div class="contact-copy reveal">
+          <p class="contact-intro">Send us a message and we'll get back to you. You can also book directly online.</p>
+          <p class="contact-address"><strong>320 Wortley Road, Unit 2</strong><br/>London, Ontario N6C 3R7</p>
+          <a class="btn btn-primary" href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">Book on JaneApp</a>
+        </div>
+        <form class="contact-form reveal d1" id="contactForm">
+          <div class="field"><label for="formName">Your name</label><input type="text" id="formName" name="name" required /></div>
+          <div class="field"><label for="formEmail">Your email</label><input type="email" id="formEmail" name="email" required /></div>
+          <div class="field"><label for="formMessage">Message</label><textarea id="formMessage" name="message" required></textarea></div>
+          <button class="btn btn-primary contact-submit" type="submit">Send Message</button>
+          <div class="form-status" id="formStatus"></div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="wrap"><h2 class="reveal">Ready to Feel Better?</h2><p class="reveal d1">Whether you're dealing with persistent pain, recovering from an injury, or simply looking to move more comfortably, we're here to help. Book your appointment online anytime through JaneApp.</p><a class="btn btn-primary reveal d2" href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">Book Online with JaneApp</a></div>
+  </section>
+
+  <footer>
+    <div class="wrap"><div class="foot-grid"><div class="brand"><img src="/assets/logo.png" alt="Wortley Osteopathy" decoding="async" /><p class="footer-intro">Classical Manual Osteopathy in the heart of Wortley Village.</p></div><div><h4>Visit</h4><a href="https://maps.google.com/?q=320+Wortley+Road+Unit+2+London+ON+N6C+3R7" target="_blank" rel="noopener">320 Wortley Road, Unit 2<br/>London, Ontario N6C 3R7</a><a href="https://wortleyosteopathy.janeapp.com/" target="_blank" rel="noopener">Book Online with JaneApp</a></div><div><h4>Social</h4><a href="https://www.instagram.com/wortleyosteopathy" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/profile.php?id=61591084995279" target="_blank" rel="noopener">Facebook</a></div></div><div class="foot-bottom"><span>&copy; <span id="year"></span> Wortley Osteopathy. All rights reserved.</span><span>Wortley Village &middot; London, ON</span></div></div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('menuOverlay');
+    let menuOpen = false;
+    const openMenu = () => { menuOpen = true; menu.classList.add('open'); overlay.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; };
+    const closeMenu = () => { menuOpen = false; menu.classList.remove('open'); overlay.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
+    btn.addEventListener('click', () => { menuOpen ? closeMenu() : openMenu(); });
+    overlay.addEventListener('click', closeMenu);
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    const topbar = document.getElementById('topbar');
+    const stickyCta = document.getElementById('stickyCta');
+    const hero = document.querySelector('.hero');
+    const onScroll = () => { topbar.classList.toggle('scrolled', window.scrollY > 8); if (stickyCta) stickyCta.classList.toggle('on', window.scrollY > 280); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    const slides = document.querySelectorAll('.hero-visual .frame img');
+    let i = 0;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (slides.length > 1 && !prefersReduced) { setInterval(() => { slides[i].classList.remove('is-active'); i = (i + 1) % slides.length; slides[i].classList.add('is-active'); }, 4500); }
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact form
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button');
+      btn.disabled = true; btn.textContent = 'Sending\\u2026';
+      status.className = 'form-status'; status.textContent = '';
+      const data = { name: form.name.value.trim(), email: form.email.value.trim(), message: form.message.value.trim() };
+      try {
+        const res = await fetch('https://auto.sdagents.ai/webhook/wortley-contact', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data)
+        });
+        if (!res.ok) throw new Error(await res.text());
+        status.className = 'form-status ok'; status.textContent = 'Thank you\\u2014we received your message and a confirmation will be on its way.';
+        form.reset();
+      } catch (err) {
+        status.className = 'form-status err'; status.textContent = 'Something went wrong. Please try again or email us directly at mindyjanewillis@gmail.com.';
+      }
+      btn.disabled = false; btn.textContent = 'Send Message';
+    });
+  </script>
 </body>
 </html>
