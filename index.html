@@ -327,7 +327,7 @@
           method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data)
         });
         if (!res.ok) throw new Error(await res.text());
-        status.className = 'form-status ok'; status.textContent = 'Thank you\\u2014we received your message and a confirmation will be on its way.';
+        status.className = 'form-status ok'; status.textContent = 'Thanks\\u2014we\\u2019ll be in touch soon.';
         form.reset();
       } catch (err) {
         status.className = 'form-status err'; status.textContent = 'Something went wrong. Please try again or email us directly at mindyjanewillis@gmail.com.';
